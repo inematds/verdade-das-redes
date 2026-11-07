@@ -36,10 +36,11 @@ Full report: [relatorios/2026-11-07.md](relatorios/2026-11-07.md) (in Portuguese
 |---|---|---|---|
 | 1 | Daily Instagram and TikTok collection (3 Metricool brands, 14-day window, one snapshot per day) | `coleta/metricool.sh` | ⚙️ `verdade-metricool` timer 06:30 → 🤖 `claude -p` with the `metricool-inematds` connector |
 | 2 | Weekly YouTube collection (everything the channels published in the last 60 days, with views, likes, and comments) | `coleta/youtube.py` | ⚙️ `verdade-youtube` timer Monday 07:00 |
-| 3 | Match platforms by the same piece of content (the Instagram/TikTok text includes the YouTube link) and compile the week’s numbers | `coleta/junta.py` | ⚙️ runs at the end of step 2 |
-| 4 | Read the numbers and record confirmed rules and hypotheses | `relatorios/AAAA-MM-DD.md` | 🧠 session with Nei |
-| 5 | Start or close a test (e.g., ≤ 4 shorts per day), with start and end dates | `testes.md` | 🧠 session with Nei |
-| 6 | Turn it into content: the week’s “The truth about social media” (carousel, video, INEMA.VIBE topic) | video/carousel skills | 🧠 + 🤖 |
+| 3 | Inventory of what each channel produced: videos per day, collected material (photos, clips, satellite imagery), and what appeared on screen (seconds of real footage, illustrations, maps) | `~/projetos/eventosextremospub/auto/inventario.py > dados/producao/eventosextremos.jsonl` | ⚙️ runs at the end of step 2 |
+| 4 | Match platforms by the same piece of content (the Instagram/TikTok text includes the YouTube link) and compile the week’s numbers | `coleta/junta.py` | ⚙️ runs at the end of step 2 |
+| 5 | Read the numbers and record confirmed rules and hypotheses | `relatorios/AAAA-MM-DD.md` | 🧠 session with Nei |
+| 6 | Start or close a test (e.g., ≤ 4 shorts per day), with start and end dates | `testes.md` | 🧠 session with Nei |
+| 7 | Turn it into content: the week’s “The truth about social media” (carousel, video, INEMA.VIBE topic) | video/carousel skills | 🧠 + 🤖 |
 
 ## Sources and limitations
 

@@ -36,10 +36,11 @@ Informe completo: [relatorios/2026-11-07.md](relatorios/2026-11-07.md) (en portu
 |---|---|---|---|
 | 1 | Recopilación diaria de Instagram y TikTok (3 marcas de Metricool, ventana de 14 días, una captura por día) | `coleta/metricool.sh` | ⚙️ timer `verdade-metricool` 06:30 → 🤖 `claude -p` con el conector `metricool-inematds` |
 | 2 | Recopilación semanal de YouTube (todo lo que publicaron los canales en los últimos 60 días, con visualizaciones, likes y comentarios) | `coleta/youtube.py` | ⚙️ timer `verdade-youtube` lunes 07:00 |
-| 3 | Reunir las redes a partir de la misma pieza (el texto de Instagram/TikTok incluye el enlace de YouTube) y preparar las cifras de la semana | `coleta/junta.py` | ⚙️ se ejecuta al final del paso 2 |
-| 4 | Leer las cifras, registrar reglas confirmadas e hipótesis | `relatorios/AAAA-MM-DD.md` | 🧠 sesión con Nei |
-| 5 | Abrir o cerrar una prueba (p. ej., ≤ 4 shorts por día) con fecha de inicio y fin | `testes.md` | 🧠 sesión con Nei |
-| 6 | Convertirlo en contenido: «La verdad de las redes» de la semana (carrusel, video, tema INEMA.VIBE) | skills de video/carrusel | 🧠 + 🤖 |
+| 3 | Inventario de lo que produjo cada canal: videos por día, material recopilado (fotos, clips, imágenes satelitales) y lo que apareció en pantalla (segundos de clips reales, ilustraciones, mapas) | `~/projetos/eventosextremospub/auto/inventario.py > dados/producao/eventosextremos.jsonl` | ⚙️ se ejecuta al final del paso 2 |
+| 4 | Reunir las redes a partir de la misma pieza (el texto de Instagram/TikTok incluye el enlace de YouTube) y preparar las cifras de la semana | `coleta/junta.py` | ⚙️ se ejecuta al final del paso 2 |
+| 5 | Leer las cifras, registrar reglas confirmadas e hipótesis | `relatorios/AAAA-MM-DD.md` | 🧠 sesión con Nei |
+| 6 | Abrir o cerrar una prueba (p. ej., ≤ 4 shorts por día) con fecha de inicio y fin | `testes.md` | 🧠 sesión con Nei |
+| 7 | Convertirlo en contenido: «La verdad de las redes» de la semana (carrusel, video, tema INEMA.VIBE) | skills de video/carrusel | 🧠 + 🤖 |
 
 ## Fuentes y límites
 

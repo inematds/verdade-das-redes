@@ -36,10 +36,11 @@ Relatório completo: [relatorios/2026-11-07.md](relatorios/2026-11-07.md). Teste
 |---|---|---|---|
 | 1 | Coleta diária do Instagram e do TikTok (3 marcas do Metricool, janela de 14 dias, uma foto por dia) | `coleta/metricool.sh` | ⚙️ timer `verdade-metricool` 06:30 → 🤖 `claude -p` com o conector `metricool-inematds` |
 | 2 | Coleta semanal do YouTube (tudo o que os canais publicaram nos últimos 60 dias, com views, likes e comentários) | `coleta/youtube.py` | ⚙️ timer `verdade-youtube` segunda 07:00 |
-| 3 | Juntar as redes pela mesma peça (o texto do Instagram/TikTok traz o link do YouTube) e montar os números da semana | `coleta/junta.py` | ⚙️ roda no fim do passo 2 |
-| 4 | Ler os números, registrar regras confirmadas e hipóteses | `relatorios/AAAA-MM-DD.md` | 🧠 sessão com o Nei |
-| 5 | Abrir ou fechar um teste (ex.: ≤ 4 shorts por dia) com data de início e fim | `testes.md` | 🧠 sessão com o Nei |
-| 6 | Virar conteúdo: "A verdade das redes" da semana (carrossel, vídeo, tópico INEMA.VIBE) | skills de vídeo/carrossel | 🧠 + 🤖 |
+| 3 | Inventário do que cada canal produziu: vídeos por dia, material coletado (fotos, clipes, satélite) e o que foi para a tela (segundos de clipe real, ilustração, mapa) | `~/projetos/eventosextremospub/auto/inventario.py > dados/producao/eventosextremos.jsonl` (um arquivo por canal em `dados/producao/`) | ⚙️ roda no fim do passo 2 |
+| 4 | Juntar as redes pela mesma peça (o texto do Instagram/TikTok traz o link do YouTube) e montar os números da semana | `coleta/junta.py` | ⚙️ roda no fim do passo 2 |
+| 5 | Ler os números, registrar regras confirmadas e hipóteses | `relatorios/AAAA-MM-DD.md` | 🧠 sessão com o Nei |
+| 6 | Abrir ou fechar um teste (ex.: ≤ 4 shorts por dia) com data de início e fim | `testes.md` | 🧠 sessão com o Nei |
+| 7 | Virar conteúdo: "A verdade das redes" da semana (carrossel, vídeo, tópico INEMA.VIBE) | skills de vídeo/carrossel | 🧠 + 🤖 |
 
 ## Fontes e limites
 
@@ -56,5 +57,6 @@ python3 coleta/autorizar.py client_secret.json ~/minhas-credenciais.json  # cred
 python3 coleta/youtube.py            # todos os canais
 python3 coleta/youtube.py lives10    # um canal
 bash coleta/metricool.sh             # Instagram + TikTok
-python3 coleta/junta.py              # tabela da semana
+python3 ~/projetos/eventosextremospub/auto/inventario.py > dados/producao/eventosextremos.jsonl  # o que o canal produziu
+python3 coleta/junta.py              # tabela da semana (+ vídeos por dia de cada canal, pelo histórico do yt-pubx)
 ```
