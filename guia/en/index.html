@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The truth about social media — what works on social media, backed by real data</title>
+<meta name="description" content="Real data from 17 YouTube channels and Instagram and TikTok accounts: what really works on each platform, measured every week.">
+<link rel="alternate" hreflang="pt-BR" href="https://inematds.github.io/verdade-das-redes/guia/">
+<link rel="alternate" hreflang="en" href="https://inematds.github.io/verdade-das-redes/guia/en/">
+<link rel="alternate" hreflang="es" href="https://inematds.github.io/verdade-das-redes/guia/es/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0c0c10; --bg2:#14141b; --card:#16161e; --line:#272730;
+    --txt:#e9e9ee; --mut:#9a9aa6; --amb:#E2A23B; --amb2:#f0c070; --sky:#38bdf8; --pro:#cbd5e1;
+    color-scheme:dark;
+  }
+  body.light{
+    --bg:#f6f7f9; --bg2:#eceef2; --card:#ffffff; --line:#e1e3ea;
+    --txt:#1a1a22; --mut:#5b5b68; --amb:#b9791d; --amb2:#a16207; --sky:#0369a1; --pro:#b45309;
+    color-scheme:light;
+  }
+  body.light .hero .glow{opacity:.5}
+  body.light pre{background:#0e0e14;color:#d6d6e0}
+  body.light pre .c{color:#8a8a98}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--txt);font:16px/1.65 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;margin:0}
+  a{color:var(--amb);text-decoration:none}
+  code,pre{font-family:"JetBrains Mono",monospace}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 22px}
+  .mut{color:var(--mut)} .amb{color:var(--amb)}
+  .chip{display:inline-block;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--amb);font-weight:600;font-family:Sora}
+  nav{position:sticky;top:0;z-index:30;backdrop-filter:blur(12px);background:rgba(12,12,16,.78);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;align-items:center;gap:22px;height:60px}
+  nav .brand{display:flex;align-items:center;gap:8px;font-family:Sora,system-ui,sans-serif;font-weight:800;letter-spacing:-.02em;color:var(--amb)}
+  nav .brand .emoji{font-size:1.25rem}
+  nav .sep{color:var(--mut);opacity:.45}
+  nav .inema{color:var(--sky);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .inema:hover{filter:brightness(1.15)}
+  nav .pro{color:var(--pro);font-weight:600;font-size:.88rem;font-family:Sora}
+  nav .pro:hover{filter:brightness(1.15)}
+  nav .clubpro{display:inline-flex;align-items:center;gap:6px}
+  nav .links{margin-left:auto;display:flex;align-items:center;gap:20px;font-size:.92rem}
+  nav .links a.sec{color:var(--mut)} nav .links a.sec:hover{color:var(--txt)}
+  .lang{display:inline-flex;gap:2px;font-family:Sora,system-ui,sans-serif;font-size:.78rem}
+  .lang a{color:var(--mut);padding:.2em .45em;border-radius:6px} .lang a.on{color:var(--amb);background:rgba(226,162,59,.12)}
+  .tgl{background:var(--bg2);border:1px solid var(--line);color:var(--txt);width:38px;height:38px;border-radius:10px;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;font-size:1.05rem}
+  .tgl:hover{border-color:var(--amb)}
+  .btn{display:inline-block;background:var(--amb);color:#1a1206;font-weight:600;padding:.6em 1.05em;border-radius:10px;font-family:Sora}
+  .btn.ghost{background:transparent;color:var(--txt);border:1px solid var(--line)}
+  @media(max-width:760px){nav .links a.sec{display:none}}
+  @media(max-width:520px){nav .wrap{gap:8px;padding:8px 14px;height:auto;flex-wrap:wrap} nav .links{gap:8px;margin-left:0;width:100%;justify-content:space-between} nav .btn{padding:.45em .7em;font-size:.82rem} .tgl{width:34px;height:34px}}
+  .hero{position:relative;overflow:hidden;border-bottom:1px solid var(--line)}
+  .hero .glow{position:absolute;inset:-40% -20% auto auto;width:70%;height:600px;background:radial-gradient(closest-side,rgba(226,162,59,.22),transparent 70%);pointer-events:none}
+  .hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:74px 22px}
+  .hero h1{font-size:clamp(2.2rem,5vw,3.5rem);font-weight:800;letter-spacing:-.025em}
+  .hero p.lead{font-size:1.18rem;color:var(--mut);margin:1.1em 0 1.6em;max-width:34ch}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero figure{margin:0;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000}
+  .hero figure img{width:100%;height:auto;display:block}
+  .resumo{padding:38px 0 34px;border-bottom:1px solid var(--line)}
+  .resumo p{font-size:1.12rem;line-height:1.7;max-width:74ch;margin:.55em 0 0}
+  @media(max-width:780px){.hero .wrap{grid-template-columns:1fr;padding:48px 22px}}
+  section{padding:62px 0;border-bottom:1px solid var(--line)}
+  section h2{font-size:clamp(1.5rem,3.4vw,2.1rem);font-weight:800;letter-spacing:-.02em}
+  section .sub{color:var(--mut);margin:.6em 0 2em;max-width:62ch}
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)} .g4{grid-template-columns:repeat(4,1fr)} .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g4{grid-template-columns:1fr 1fr}}
+  @media(max-width:540px){.g2,.g3,.g4{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .card h3{font-size:1.05rem;margin-bottom:.4em}
+  .card p{color:var(--mut);font-size:.92rem;margin:0}
+  .num{display:inline-flex;width:30px;height:30px;align-items:center;justify-content:center;border-radius:8px;background:rgba(226,162,59,.14);color:var(--amb);font-family:Sora,system-ui,sans-serif;font-weight:800;font-size:.9rem;margin-bottom:.7em}
+  .flow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:10px}
+  .flow span{background:var(--bg2);border:1px solid var(--line);border-radius:999px;padding:.45em .9em;font-size:.85rem;font-family:Sora,system-ui,sans-serif;font-weight:600}
+  .flow .arr{color:var(--amb);border:none;background:none;padding:0 .1em}
+  pre{background:#0a0a0e;border:1px solid var(--line);border-radius:12px;padding:16px 18px;overflow:auto;font-size:.86rem;line-height:1.6;color:#d6d6e0}
+  pre .c{color:#6f6f7c} pre .k{color:var(--amb2)} pre .s{color:#9ece6a}
+  .step{display:grid;grid-template-columns:46px minmax(0,1fr);gap:16px;margin-bottom:26px}
+  .step>div,.card{min-width:0}
+  p code,li code,td code{overflow-wrap:anywhere}
+  .step .b{width:46px;height:46px;border-radius:12px;background:var(--amb);color:#1a1206;font-family:Sora,system-ui,sans-serif;font-weight:800;font-size:1.25rem;display:flex;align-items:center;justify-content:center}
+  .step h3{font-size:1.12rem;margin-bottom:.3em}
+  .step p{color:var(--mut);margin:.2em 0 .7em}
+  .ex{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.ex{grid-template-columns:1fr}}
+  .ex figure{margin:0;border-radius:14px;overflow:hidden;border:1px solid var(--line)}
+  .ex figure img{width:100%;height:auto;display:block}
+  .ex figcaption{padding:12px 14px;font-size:.88rem;color:var(--mut);background:var(--card)}
+  .phase{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .phase:last-child{border:none}
+  .phase .tag{flex:0 0 92px;font-family:Sora,system-ui,sans-serif;font-weight:800;color:var(--amb)}
+  .phase .d strong{display:block;margin-bottom:.2em}
+  .phase .d span{color:var(--mut);font-size:.92rem}
+  footer{padding:46px 0;text-align:center;color:var(--mut);font-size:.9rem}
+  .pill{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:.3em .8em;font-size:.78rem;color:var(--mut);margin:0 4px}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+  <a class="brand" href="#top"><span class="emoji">📊</span> The truth about social media</a>
+  <span class="sep">|</span>
+  <span class="clubpro">
+    <a class="inema" href="https://inema.club" target="_blank" rel="noopener">INEMA.CLUB</a>
+    <span class="sep">-</span>
+    <a class="pro" href="https://inema.pro" target="_blank" rel="noopener">PRO</a>
+  </span>
+  <div class="links">
+    <a class="sec" href="#oque">What it is</a>
+    <a class="sec" href="#achados">Findings</a>
+    <a class="sec" href="#fluxo">How it works</a>
+    <a class="sec" href="#guia">User guide</a>
+    <a class="sec" href="#roadmap">Roadmap</a>
+    <span class="lang"><a href="../">PT</a><a class="on" href="./">EN</a><a href="../es/">ES</a></span>
+    <button class="tgl" id="themeToggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+    <a class="btn" href="https://github.com/inematds/verdade-das-redes" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></nav>
+
+<header class="hero" id="top">
+  <div class="glow"></div>
+  <div class="wrap">
+    <div>
+      <span class="chip">Real data · no guru formulas</span>
+      <h1>The <span class="amb">truth</span> about social media</h1>
+      <p class="lead">17 YouTube channels, Instagram and TikTok accounts, and only one channel truly growing. Instead of selling formulas, we measure everything every week and show what works and what doesn’t.</p>
+      <div class="cta">
+        <a class="btn" href="#achados">See the findings</a>
+        <a class="btn ghost" href="https://github.com/inematds/verdade-das-redes" target="_blank" rel="noopener">View on GitHub</a>
+      </div>
+    </div>
+    <figure><img src="../assets/banner-en.jpg" alt="The truth about social media: real data from 17 channels"></figure>
+  </div>
+</header>
+
+<section id="resumo" class="resumo"><div class="wrap">
+  <span class="chip">In short</span>
+  <p>The truth about social media is an open study that brings together real numbers from INEMA channels on YouTube, Instagram, and TikTok. It is for content creators who want to know what really works, based on data rather than guru promises. A bot collects the numbers daily and weekly, matches the same piece of content across all three platforms, and generates a report. If you just want to learn, read the findings. To run it on your own channels, you need Python, a Google Cloud project with the YouTube API enabled, and Claude Code with the Metricool connector for Instagram and TikTok.</p>
+</div></section>
+
+<section id="oque"><div class="wrap">
+  <span class="chip">What it is</span>
+  <h2>A lab using its own numbers</h2>
+  <p class="sub">No “celebrity playbook.” These are our channels, including the wins and failures, measured over time.</p>
+  <figure style="margin:0 0 26px;border-radius:16px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 80px -30px #000"><img src="../assets/banner-grade-en.jpg" alt="What works on each platform" loading="lazy" style="width:100%;display:block"></figure>
+  <div class="grid g3">
+    <div class="card"><h3>📈 Real data</h3><p>Views, likes, and comments from INEMA’s YouTube channels; views, saves, and shares from 3 brands on Instagram and TikTok.</p></div>
+    <div class="card"><h3>🔁 Every week</h3><p>Data collection runs on its own: Instagram and TikTok every day, YouTube every Monday. Each week makes the conclusions more reliable.</p></div>
+    <div class="card"><h3>🧪 Dated tests</h3><p>Each change (e.g., no more than 4 Shorts a day) is logged with a start date. A hypothesis becomes a rule only after two weeks of data.</p></div>
+  </div>
+</div></section>
+
+<section id="achados"><div class="wrap">
+  <span class="chip">Findings · 07/11/2026</span>
+  <h2>What the numbers have shown so far</h2>
+  <p class="sub">The first report, with public YouTube data and Instagram and TikTok metrics.</p>
+  <div class="grid g3">
+    <div class="card"><h3>🎯 The same video, three results</h3><p>The GitHub Top 10 (a daily series featuring the projects that grew the most on GitHub) got <strong>138,677 views on Instagram</strong> (7,354 saves), 460 on TikTok, and <strong>33 on YouTube</strong>. eventosextremos’ weather channel (INEMA’s weather forecast channel) shows the opposite: a median of 7,400 on YouTube and ~150 on Instagram.</p></div>
+    <div class="card"><h3>🧭 Each platform rewards something different</h3><p><strong>YouTube:</strong> what people search for and come back to watch. <strong>Instagram:</strong> what people save and send to someone. <strong>TikTok:</strong> what keeps people watching to the end.</p></div>
+    <div class="card"><h3>⏱️ Posting too much hurts</h3><p>On eventosextremos, days with 3 or 4 Shorts brought in 17,000 to 31,000 views per video. Days with 8 or 9 dropped to 2,000 to 4,000.</p></div>
+    <div class="card"><h3>🧩 One topic per channel</h3><p>The only growing channel sticks to one topic (weather), with a recurring series (“Weather for DD/MM”), a number and location in the title, and a real photo on the cover.</p></div>
+    <div class="card"><h3>🤖 YouTube AI content is competitive</h3><p>9 AI channels, 1,520 videos, and only 24 with more than 500 views. What worked: a tutorial that solves a problem (“how to set up Codex,” 1,900 views) and AI for people over 40.</p></div>
+    <div class="card"><h3>🔎 What people search for</h3><p>For AI: “what it is,” “for beginners,” “free,” and lists. No one searches for opinionated titles like “Stop…”.</p></div>
+  </div>
+  <p class="sub" style="margin-top:18px">Full report: <a href="https://github.com/inematds/verdade-das-redes/blob/main/relatorios/2026-11-07.md" target="_blank" rel="noopener">relatorios/2026-11-07.md (in Portuguese)</a>. Tests in progress: <a href="https://github.com/inematds/verdade-das-redes/blob/main/testes.md" target="_blank" rel="noopener">testes.md (in Portuguese)</a>.</p>
+</div></section>
+
+<section id="fluxo"><div class="wrap">
+  <span class="chip">How it works</span>
+  <h2>From data collection to report</h2>
+  <p class="sub">Two bots collect the data, a script matches the same piece across all three platforms, and we review the results and decide what to test next.</p>
+  <div class="flow">
+    <span>Metricool: Instagram + TikTok (daily)</span><span class="arr">→</span>
+    <span>YouTube Data API (every Monday)</span><span class="arr">→</span>
+    <span>Match the same piece by its YouTube link</span><span class="arr">→</span>
+    <span>Weekly report</span><span class="arr">→</span>
+    <span>New dated test</span>
+  </div>
+</div></section>
+
+<section id="pre"><div class="wrap">
+  <span class="chip">Prerequisites</span>
+  <h2>Run it on your channels</h2>
+  <p class="sub">If you just want to learn, read the findings. To measure your own channels, you’ll need the following.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Python 3</h3><p>The scripts use only the standard library.</p><pre><span class="c"># check</span>
+python3 --version</pre></div>
+    <div class="card"><h3>Google account for the channel</h3><p>Access to the Google account that owns the YouTube channel. In step 2, you’ll create authorization in Google Cloud (Google’s developer console, free for this use) that lets the script <strong>read only</strong> the channel’s numbers.</p></div>
+    <div class="card"><h3>Claude Code + Metricool (optional)</h3><p>For Instagram and TikTok only. <a href="https://metricool.com" target="_blank" rel="noopener">Metricool</a> is a social media analytics dashboard. You need an account with your social networks connected, Claude Code, and the Metricool MCP connector (the “plug-in” that lets Claude Code read your account), installed as described in Metricool’s help, with a name that has no spaces (e.g., <code>metricool</code>).</p><pre><span class="c"># check the connector name</span>
+claude mcp list | grep -i metricool</pre></div>
+  </div>
+  <p class="sub" style="margin-top:14px">⚠️ Use the <code>youtube.readonly</code> scope. The <code>youtube</code> scope, without “.readonly,” also allows publishing and deleting videos.</p>
+  <p class="sub"><strong>Terms:</strong> <em>Median</em> = the middle value when you sort views (it isn’t skewed by one video that took off). <em>Piece</em> = the same content published across multiple platforms. <em>Short</em> = a vertical video up to 3 minutes long. <em>Live</em> = a live broadcast. <em>.jsonl</em> = a text file with one record per line.</p>
+</div></section>
+
+<section id="guia"><div class="wrap">
+  <span class="chip">Step-by-step guide</span>
+  <h2>Measure your channels in 6 steps</h2>
+  <p class="sub">Real commands from the repository. Made for Linux.</p>
+
+  <div class="step"><div class="b">1</div><div>
+    <h3>Download the project</h3>
+    <p>Clone the repository and go into its folder.</p>
+<pre><span class="k">git clone https://github.com/inematds/verdade-das-redes</span>
+<span class="k">cd verdade-das-redes</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">2</div><div>
+    <h3>Create YouTube read authorization</h3>
+    <p>Just once, in <a href="https://console.cloud.google.com/" target="_blank" rel="noopener">Google Cloud</a>, signed in with the account that owns the channel:</p>
+    <ol style="color:var(--mut);margin:0 0 12px 18px;line-height:1.7">
+      <li>At the top, “Select a project” → “New project” → give it a name and create it.</li>
+      <li>“APIs & Services” menu → “Library” → search for <strong>YouTube Data API v3</strong> → “Enable.”</li>
+      <li>“APIs & Services” → “OAuth consent screen” (in newer versions: “Google Auth Platform” → “Audience”): choose “External,” enter a name and email, and add your email under “Test users.”</li>
+      <li>“APIs & Services” → “Credentials” → “Create credentials” → “OAuth client ID” → choose “Desktop app” → “Download JSON.”</li>
+      <li>Move the downloaded file (with a name like <code>client_secret_123…apps.googleusercontent.com.json</code>) into the project folder and name it <code>client_secret.json</code>.</li>
+    </ol>
+    <p>Next, from inside the project folder, generate the credentials file. Your browser will open: sign in with the channel account and authorize access. You’ll see “Google hasn’t verified this app”: that’s normal because it’s your app. Click “Advanced” → “Go to (unsafe)” and then “Continue.” The script requests read-only access.</p>
+<pre><span class="k">mv ~/Downloads/client_secret_*.json client_secret.json</span>
+<span class="k">python3 coleta/autorizar.py client_secret.json ~/minhas-credenciais.json</span>
+<span class="c"># Credentials saved in /home/voce/minhas-credenciais.json</span></pre>
+    <p>While the app is in test mode, Google makes the authorization expire after 7 days: run the last command again or publish the app on the consent screen.</p>
+    <p>Now tell the script where each channel is. Have more than one channel? Repeat for each one, with a different name and file.</p>
+<pre><span class="k">cat &gt; ~/verdade-canais.json</span> &lt;&lt;'FIM'
+{"canais": {"meucanal": {
+  "credenciais_cmd": "cat ~/minhas-credenciais.json"}}}
+FIM
+<span class="k">export VR_CONFIG=~/verdade-canais.json</span>  <span class="c"># only applies in this terminal; to make it permanent: add the line to ~/.bashrc</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">3</div><div>
+    <h3>Collect YouTube data</h3>
+    <p>Fetches everything each channel published in the last 60 days (or the number in <code>VR_DIAS</code>), including views, likes, and comments, and separates Shorts, long videos, and Lives.</p>
+<pre><span class="k">python3 coleta/youtube.py</span>
+<span class="c"># ok meucanal: 1200 inscritos, 85 vídeos em 60 dias</span>
+<span class="c"># 85 vídeos -&gt; dados/youtube/AAAA-MM-DD.jsonl</span>
+<span class="k">VR_DIAS=30 python3 coleta/youtube.py meucanal</span>  <span class="c"># only 30 days</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">4</div><div>
+    <h3>Collect Instagram and TikTok data (optional)</h3>
+    <p>Use the Metricool connector in Claude Code. First, find your brand ID: in Claude Code, ask it to “call getBrandSettings from the Metricool connector” and note the <code>id</code>. Then run it with the ID and connector name. The brand name must not contain spaces (hyphens are fine).</p>
+<pre><span class="k">VR_MCP=metricool VR_MARCAS="1234567:minhamarca" bash coleta/metricool.sh</span>
+<span class="c"># grava dados/metricool/AAAA-MM-DD/minhamarca-tiktok.json etc.</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">5</div><div>
+    <h3>Generate the weekly report</h3>
+    <p>Builds a table of numbers: median by channel and format, posts per day versus views, and the same piece across all three platforms. Matching across platforms works only if the Instagram/TikTok post text includes the YouTube video link (e.g., “On YouTube: https://youtube.com/shorts/…”). The <a href="#achados">findings</a> above come from someone reviewing these tables and testing hypotheses; the script doesn’t write conclusions on its own.</p>
+<pre><span class="k">python3 coleta/junta.py</span>  <span class="c"># relatorios/semana-AAAA-MM-DD.md</span></pre>
+  </div></div>
+
+  <div class="step"><div class="b">6</div><div>
+    <h3>Run it automatically (optional)</h3>
+    <p>Without scheduling, you can run steps 3 to 5 manually whenever you want. To automate them, use cron: Instagram and TikTok every day at 6:30 a.m.; YouTube and the report every Monday at 7 a.m. Run <code>crontab -e</code>: it opens a text editor. Paste the two lines below at the end of the file, save, and close (in nano: Ctrl+O, Enter, Ctrl+X). Replace <code>~/verdade-das-redes</code> with the folder where you cloned the project.</p>
+<pre><span class="c"># lines to paste inside crontab -e</span>
+30 6 * * *  cd ~/verdade-das-redes &amp;&amp; VR_MCP=metricool VR_MARCAS="1234567:minhamarca" bash coleta/metricool.sh
+0 7 * * 1  cd ~/verdade-das-redes &amp;&amp; VR_CONFIG=~/verdade-canais.json python3 coleta/youtube.py &amp;&amp; python3 coleta/junta.py</pre>
+  </div></div>
+</div></section>
+
+<section id="roadmap"><div class="wrap">
+  <span class="chip">Roadmap</span>
+  <h2>What’s next</h2>
+  <p class="sub">It starts with our channels; next, a tool for the community.</p>
+  <div class="phase"><div class="tag">Phase 1</div><div class="d"><strong>Automatic collection + first report</strong><span>Live: Metricool every day, YouTube every week, report dated 07/11/2026.</span></div></div>
+  <div class="phase"><div class="tag">Phase 2</div><div class="d"><strong>Dashboard and tests</strong><span>A page showing week-by-week progress and the first tests (≤ 4 Shorts a day, search-friendly titles).</span></div></div>
+  <div class="phase"><div class="tag">Phase 3</div><div class="d"><strong>A channel checkup for the community</strong><span>Each member compares their own channel with a growing channel in the same topic area.</span></div></div>
+</div></section>
+
+<footer>
+  <div class="wrap">
+    <div class="pill">Python</div><div class="pill">YouTube Data API</div><div class="pill">Metricool</div><div class="pill">cron</div>
+    <p style="margin-top:18px">The truth about social media · open data, no guru formulas ·
+      <a href="https://github.com/inematds/verdade-das-redes">inematds/verdade-das-redes</a> ·
+      <a href="https://inema.club">INEMA.CLUB</a></p>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var KEY='verdade-das-redes-theme';
+    var b=document.body, t=document.getElementById('themeToggle');
+    if(localStorage.getItem(KEY)==='light'){ b.classList.add('light'); t.textContent='☀️'; }
+    t.addEventListener('click',function(){
+      var light=b.classList.toggle('light');
+      t.textContent=light?'☀️':'🌙';
+      localStorage.setItem(KEY, light?'light':'dark');
+    });
+  })();
+</script>
+</body>
+</html>

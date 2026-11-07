@@ -1,0 +1,5 @@
+dados/
+__pycache__/
+*.pyc
+logs/
+client_secret*.json
