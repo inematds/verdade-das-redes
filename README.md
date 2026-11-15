@@ -60,3 +60,7 @@ bash coleta/metricool.sh             # Instagram + TikTok
 python3 ~/projetos/eventosextremospub/auto/inventario.py > dados/producao/eventosextremos.jsonl  # o que o canal produziu
 python3 coleta/junta.py              # tabela da semana (+ vídeos por dia de cada canal, pelo histórico do yt-pubx)
 ```
+
+## IA configurável por etapa (15/11/2026)
+
+A escolha efetiva de tipo, provedor, modelo e esforço fica em `auto/ia.yaml`, com exemplos #. Comandos e limites em [auto/IA.md](auto/IA.md). As APIs de modelos começam desativadas; o cron lê a configuração a cada chamada.

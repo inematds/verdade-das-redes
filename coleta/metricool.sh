@@ -31,9 +31,13 @@ for m in $MARCAS; do
     conj=${c%%:*}; met=${c#*:}
     arq="$OUT/$nome-$conj.json"
     met_json=$(printf '"%s",' ${met//,/ }); met_json="[${met_json%,}]"
-    pedido="Chame UMA vez a ferramenta getAnalyticsDataByMetrics do servidor MCP $MCP com brandId=\"$id\", from=\"$DE\", to=\"$ATE\", metrics=$met_json. Depois use a ferramenta Write para gravar em $arq exatamente o JSON devolvido pela ferramenta, sem mudar nem resumir nada. Se a ferramenta der erro, grave {\"erro\": \"<mensagem>\"}. Não faça mais nada."
-    timeout 600 env -u ANTHROPIC_API_KEY claude -p "$pedido" \
-      --allowedTools "mcp__${MCP}__getAnalyticsDataByMetrics,Write" >/dev/null 2>&1
+    pedido="Somente leitura. Chame getBrandSettings e confirme a conta, depois UMA vez getAnalyticsDataByMetrics no servidor MCP $MCP, brandId=\"$id\", from=\"$DE\", to=\"$ATE\", metrics=$met_json. Devolva exatamente o resultado JSON da ferramenta, sem resumir ou mudar os valores, dentro de {\"ok\":true,\"dados\":<JSON da ferramenta>,\"linhas\":<quantidade original de rows>}. Erro: ok=false. Não escreva arquivos e não publique."
+    if printf '%s' "$pedido" | timeout 900 python3 "$RAIZ/auto/ia_motor.py" executar metricool_analise --agente --pasta "$OUT" \
+      --ferramentas "mcp__${MCP}__getBrandSettings mcp__${MCP}__getAnalyticsDataByMetrics" --saida "$arq.resposta.json" >/dev/null 2>&1 \
+      && python3 "$RAIZ/auto/salvar_metricas.py" "$arq.resposta.json" "$arq"; then :
+    else
+      echo "FALHA $nome $conj: executor/contagem não confirmados"; falhas=$((falhas+1)); continue
+    fi
     if python3 -I -c "import json,sys; d=json.load(open(sys.argv[1])); assert 'rows' in d; print(len(d['rows']))" "$arq" 2>/dev/null >"$arq.n"; then
       echo "ok $nome $conj: $(cat "$arq.n") linhas"
     else

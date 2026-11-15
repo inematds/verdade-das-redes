@@ -3,3 +3,6 @@ __pycache__/
 *.pyc
 logs/
 client_secret*.json
+
+**/ia-execucoes.jsonl
+auto/ia.lock
